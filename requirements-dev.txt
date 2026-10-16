@@ -1,0 +1,5 @@
+# MCP助手 / MCPAssistant - 开发与构建依赖清单 (Locked)
+-r requirements.txt
+pyinstaller==6.22.3
+pytest==8.3.3
+pytest-qt==4.5.0

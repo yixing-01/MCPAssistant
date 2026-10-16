@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.venv-build/
+ENV/
+build/
+dist/
+dist-backups/
+source-backups/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Linting
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# User Data & Secrets
+.env
+.env.*
+config.json
+secrets.dat
+catalog.json
+*.log
+*.tmp
+
+# Internal Tooling & Handoff
+AGENTS.md
+GEMINI.md
+docs/AI_HANDOFF.md
+.superpowers/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/

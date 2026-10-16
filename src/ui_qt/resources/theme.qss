@@ -1,0 +1,362 @@
+/* 全局样式表：MCP助手视觉规范 (方案 A) */
+
+/* 1. 基础全局设置：不设置全局 background，避免污染白色卡片内的文本和容器 */
+QWidget {
+    color: #20293A;
+    font-size: 13px;
+    outline: none;
+}
+
+/* 2. 顶层窗口及页面主根容器底色 */
+QMainWindow, QDialog, QWidget#pageRoot {
+    background-color: #FBFAF7;
+}
+
+/* 3. 标签与容器默认透明背景，坚决避免出现米白色矩形条 */
+QLabel {
+    background: transparent;
+    color: #20293A;
+}
+
+/* 4. 侧边栏样式 */
+QFrame#sidebar {
+    background-color: #F0EFE9;
+    border-right: 1px solid #E2DFD6;
+}
+
+/* 侧边栏品牌区域 */
+QLabel#brandMark {
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+QLabel#brandTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #20293A;
+}
+QLabel#brandSubtitle {
+    font-size: 11px;
+    color: #7A8492;
+}
+
+/* 侧边栏导航按钮：紧凑、无硬边框、明确区分选中与焦点 */
+QPushButton#navButton {
+    min-height: 42px;
+    max-height: 42px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #485366;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+}
+QPushButton#navButton:hover {
+    background-color: rgba(255, 255, 255, 0.65);
+    color: #20293A;
+}
+QPushButton#navButton:checked {
+    background-color: #FFFFFF;
+    color: #4054D9;
+    font-weight: 700;
+    border: none;
+}
+QPushButton#navButton:focus {
+    border: none;
+    outline: none;
+}
+
+/* 侧边栏底部提示卡片 */
+QFrame#sidebarNote {
+    background-color: #E7E9FB;
+    border-radius: 12px;
+    border: none;
+}
+QLabel#sidebarNoteTitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #485285;
+}
+QLabel#sidebarNoteDesc {
+    font-size: 10px;
+    color: #58618E;
+    line-height: 1.5;
+}
+
+/* 5. 白色主卡片容器 */
+QFrame#card {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E2DF;
+    border-radius: 16px;
+}
+
+/* 首页 Hero 状态渐变大卡片 */
+QFrame#heroCard {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #E8ECFF, stop:0.65 #F1F7FF, stop:1 #E5F7EF);
+    border: 1px solid #DCE2F3;
+    border-radius: 20px;
+}
+
+/* 首页快捷应用卡片、空状态卡片与提示卡片 */
+QFrame#appShortcutCard, QFrame#tipCard, QFrame#homeEmptyCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E7E4DC;
+    border-radius: 14px;
+}
+QFrame#appShortcutCard:hover, QFrame#tipCard:hover {
+    border-color: #CCD3F5;
+    background-color: #FAFAFF;
+}
+
+/* 统一中性图标承托容器，确保白色/浅色原生图标在白色卡片背景上清晰可见 */
+QLabel#homeCardIconContainer, QLabel#appIcon {
+    background-color: #F2F4F7;
+    border: 1px solid #E4E7EC;
+    border-radius: 10px;
+}
+
+/* 6. 字体排版层级 */
+QLabel#pageTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #20293A;
+}
+QLabel#heroTitle {
+    font-size: 26px;
+    font-weight: 700;
+    color: #20293A;
+}
+QLabel#sectionTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #20293A;
+}
+QLabel#itemTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: #20293A;
+}
+QLabel#muted {
+    font-size: 12px;
+    color: #667085;
+    font-weight: 400;
+}
+QLabel#subText {
+    font-size: 11px;
+    color: #7A8492;
+    font-weight: 400;
+}
+
+/* 7. 按钮系统 */
+QPushButton {
+    min-height: 38px;
+    padding: 0 16px;
+    border: 1px solid #D8DBE2;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #455064;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+}
+QPushButton:hover {
+    border-color: #AEB8F1;
+    background-color: #F8F9FF;
+    color: #20293A;
+}
+QPushButton:focus {
+    border-color: #AEB8F1;
+    outline: none;
+}
+QPushButton#primary {
+    color: #FFFFFF;
+    background-color: #5367E8;
+    border: 1px solid #5367E8;
+    font-weight: 700;
+}
+QPushButton#primary:hover {
+    background-color: #4054D9;
+    border-color: #4054D9;
+}
+QPushButton#secondary {
+    background-color: #FFFFFF;
+    color: #455064;
+    border: 1px solid #D8DBE2;
+}
+QPushButton#secondary:hover {
+    background-color: #F8F9FF;
+    border-color: #AEB8F1;
+}
+
+/* 8. 输入框系统 */
+QLineEdit, QComboBox {
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid #D8DBE2;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #20293A;
+    font-size: 13px;
+}
+QLineEdit:focus, QComboBox:focus {
+    border: 1.5px solid #5367E8;
+}
+
+/* 9. 滚动区域与现代轻量滚动条 */
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+QScrollBar:vertical {
+    width: 10px;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #C7CDD8;
+    border-radius: 3px;
+    min-height: 32px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #98A2B3;
+}
+QScrollBar::handle:vertical:pressed {
+    background: #7F8998;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+    width: 0px;
+    background: transparent;
+    border: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: transparent;
+}
+
+QScrollBar:horizontal {
+    height: 10px;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:horizontal {
+    background: #C7CDD8;
+    border-radius: 3px;
+    min-width: 32px;
+    margin: 2px;
+}
+QScrollBar::handle:horizontal:hover {
+    background: #98A2B3;
+}
+QScrollBar::handle:horizontal:pressed {
+    background: #7F8998;
+}
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: transparent;
+}
+QAbstractScrollArea::corner {
+    background: transparent;
+    border: none;
+}
+
+/* 10. 应用行项与设置行项 */
+QFrame#applicationRow {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EAE9E4;
+}
+QFrame#applicationRow:hover {
+    background-color: #FAFAFF;
+}
+QFrame#settingRow {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F0EFE9;
+}
+
+/* 11. “我的应用”安全提示条：限定选择器，确保内部 QLabel 边框与背景彻底干净 */
+QFrame#applicationsNoticeBar {
+    border: 1px solid #DCE3F2;
+    border-radius: 12px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #EEF1FF, stop:0.68 #F3F8FF, stop:1 #ECF8F3);
+}
+QFrame#applicationsNoticeBar QLabel {
+    background: transparent;
+    border: none;
+}
+
+/* 12. 应用列表卡片与透明滚动结构：外层呈现纯白圆角与边框，内部透明以杜绝遮挡父级圆角 */
+QFrame#appListCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E2DF;
+    border-radius: 16px;
+}
+QScrollArea#appListScrollArea {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+}
+QScrollArea#appListScrollArea > QWidget > QWidget,
+QWidget#appListHost {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+}
+
+/* 13. 应用页三点更多操作按钮与弹出菜单 */
+QToolButton#applicationsMoreButton {
+    border: 1px solid #D8DBE2;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #455064;
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 38px;
+    max-height: 38px;
+    min-width: 38px;
+    max-width: 38px;
+    padding: 0;
+    qproperty-alignment: AlignCenter;
+}
+QToolButton#applicationsMoreButton:hover {
+    background-color: #F8F9FF;
+    border-color: #AEB8F1;
+    color: #4054D9;
+}
+QToolButton#applicationsMoreButton:pressed {
+    background-color: #EEF1FF;
+}
+QToolButton#applicationsMoreButton::menu-indicator {
+    image: none;
+    width: 0px;
+    height: 0px;
+}
+
+QMenu#applicationsMoreMenu {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E5EE;
+    border-radius: 10px;
+    padding: 6px 4px;
+}
+QMenu#applicationsMoreMenu::item {
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #20293A;
+    border-radius: 6px;
+    margin: 2px 2px;
+}
+QMenu#applicationsMoreMenu::item:selected {
+    background-color: #EEF1FF;
+    color: #4054D9;
+}
+QMenu#applicationsMoreMenu::item:pressed {
+    background-color: #E2E7FF;
+    color: #3144C2;
+}
+
